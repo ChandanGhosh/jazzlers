@@ -32,26 +32,23 @@ public class Stack
 
     public void push(int num)
     {
-        if (!isFull())
+        if (isFull())
         {
-            stack[++top] = num;
+            System.out.println("The stack is full");
+            return;
         }
-        else
-        {
-            throw new ArrayIndexOutOfBoundsException("Stack is full");
-        }
+        stack[++top] = num;
     }
 
     public int pop()
     {
-        if (!isEmpty())
+        if (isEmpty())
         {
-            return stack[top--];
+            System.out.println("The stack is empty");
+            return -1;
         }
-        else
-        {
-            throw new ArrayIndexOutOfBoundsException("The stack is empty");
-        }
+
+        return stack[top--];
     }
 
     public void print()
