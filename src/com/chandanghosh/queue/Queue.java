@@ -46,7 +46,6 @@ public class Queue {
         } else {
             front++;
         }
-        System.out.println("Deleted: " + element);
         return element;
     }
 
@@ -54,13 +53,13 @@ public class Queue {
         if (isEmpty()) {
             System.out.println("The queue is empty");
         }
-        System.out.println("FRONT indx: " + front);
+        System.out.println("FRONT index: " + front);
         int i;
         for (i = front; i <= rear; i++) {
             System.out.print(queue[i] + " ");
         }
         System.out.println();
-        System.out.println("REAR indx: " + rear);
+        System.out.println("REAR index: " + rear);
     }
 
     public static void main(String[] args) {
@@ -72,7 +71,8 @@ public class Queue {
 
         queue.display();
 
-        queue.dequeue();
+        int elem = queue.dequeue();
+        System.out.println("Deleted-> " + elem);
         queue.display();
     }
 
